@@ -24,10 +24,10 @@ class OpenAIAgent:
         prompt = ChatPromptTemplate(
             messages=[
                 SystemMessage(content=(
-                    "You are an AI that has access to a SQLite database.\n"
-                    f"The database has tables of: {tables}\n"
-                    "Do not make any assumptions about what tables exist "
-                    "or what columns exist. Instead, use the 'describe_tables' function"
+                    "Você é uma IA que tem acesso a um banco de dados SQLite.\n"
+                   f"banco de dados possui tabelas de: : {tables}\n"
+                    "Não faça suposições sobre quais tabelas existem, ou quais colunas existem.\n"
+                    "Em vez disso, use a função 'describe_tables'"
                 )),
                 HumanMessagePromptTemplate.from_template("{input}"),
                 MessagesPlaceholder(variable_name="agent_scratchpad")

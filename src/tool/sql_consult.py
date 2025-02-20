@@ -56,7 +56,7 @@ class DescribeTablesArgsSchema(BaseModel):
 
 describe_tables_tool = Tool.from_function(
     name="describe_tables",
-    description="Given a list of table names, returns the schema of those tables",
+    description="Dada uma lista de nomes de tabelas, retorna o esquema dessas tabelas",
     func=describe_tables,
     args_schema=DescribeTablesArgsSchema
 )
