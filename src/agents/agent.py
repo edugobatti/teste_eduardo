@@ -7,6 +7,7 @@ from langchain.prompts import (
 )
 from langchain.schema import SystemMessage
 from langchain.agents import OpenAIFunctionsAgent, AgentExecutor
+from datetime import date
 from dotenv import load_dotenv
 import os
 from src.tool.sql_consult import run_query_tool, list_tables, describe_tables_tool
@@ -25,6 +26,7 @@ class OpenAIAgent:
             messages=[
                 SystemMessage(content=(
                     "Você é uma IA que tem acesso a um banco de dados SQLite.\n"
+                    f"Se precisar fazer algum filtro de data, hoje é dia {date.today()} \n"
                    f"banco de dados possui tabelas de: : {tables}\n"
                     "Não faça suposições sobre quais tabelas existem, ou quais colunas existem.\n"
                     "Em vez disso, use a função 'describe_tables'"
