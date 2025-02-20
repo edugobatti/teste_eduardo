@@ -3,6 +3,7 @@
 Esta API fornece insights de vendas utilizando um agente OpenAI para responder perguntas sobre vendas e listar os produtos mais vendidos.
 
 ## Tecnologias Utilizadas
+- Langchain
 - FastAPI
 - OpenAI API
 - Pydantic
