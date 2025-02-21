@@ -10,7 +10,8 @@ from langchain.agents import OpenAIFunctionsAgent, AgentExecutor
 from datetime import date
 from dotenv import load_dotenv
 import os
-from src.tool.sql_consult import run_query_tool, list_tables, describe_tables_tool
+from src.tool.sql_consult import run_query_tool, describe_tables_tool
+from src.worker.sql_worker import list_tables
 
 load_dotenv()
 
@@ -27,7 +28,7 @@ class OpenAIAgent:
                 SystemMessage(content=(
                     "Você é uma IA que tem acesso a um banco de dados SQLite.\n"
                     f"Se precisar fazer algum filtro de data, hoje é dia {date.today()} \n"
-                   f"banco de dados possui tabelas de: : {tables}\n"
+                    f"banco de dados possui tabelas de: {tables} \n"
                     "Não faça suposições sobre quais tabelas existem, ou quais colunas existem.\n"
                     "Em vez disso, use a função 'describe_tables'"
                 )),

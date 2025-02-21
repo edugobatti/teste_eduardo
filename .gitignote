@@ -143,6 +143,6 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+__pychache__/
 .idea
-
 .pyc
