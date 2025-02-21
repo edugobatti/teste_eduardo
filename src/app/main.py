@@ -23,8 +23,7 @@ def get_sales_insights(question: Optional[str] = Query(None, description="Pergun
         raise HTTPException(status_code=400, detail="Por favor, forneça uma pergunta válida.")
     else:
        response = agent.execute(question)
-    
-       return {"content": response['output']}
+       return {"content": response}
     
 
 @app.get("/top-product")
@@ -33,7 +32,7 @@ def get_top_product():
     Retorna o produto mais vendido.
     """ 
     response = agent.execute("Quais são os produtos mais vendidos e suas quantidades")
-    return {"content": response['output']}
+    return {"content": response}
 
 
 # Função para iniciar o Streamlit
